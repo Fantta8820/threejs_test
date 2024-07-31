@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Threejs</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="m-0">
+    <div class="absolute w-full grid place-items-center pt-12">
+      <h1 class="text-5xl font-bold text-center">Threejs</h1>
+      <input
+        type="range"
+        id="slider"
+        min="0"
+        max="10"
+        value="0"
+        class="range w-1/2 mt-12"
+        oninput="updateValue(this.value)"
+      />
+      <p id="result" class="pt-12"></p>
+    </div>
+
+    <script type="module" src="main.js"></script>
+
+    <script>
+      function updateValue(value) {
+        document.getElementById("result").innerHTML = value;
+        window.setSliderValue(value);
+      }
+    </script>
+  </body>
+</html>
